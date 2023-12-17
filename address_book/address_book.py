@@ -4,7 +4,7 @@ from pathlib import Path
 from classess_ab import AddressBook, Name, Record, Phone, Birthday, Email, AddressBookFileHandler
 from commands import COMMANDS, LOGO, PATH_TO_SAVE
 from handling_errors import input_error
-from user_interfaces import UserViewer, GuiUserViewer, ConsoleUserViewer
+from user_interfaces import UserViewer, ConsoleUserViewer
 
 
 class BotAdressBook:
@@ -398,17 +398,18 @@ def choose_viewer() -> UserViewer:
     print(Fore.CYAN + "Welcome to your ADDRESS BOOK!")
     print()
 
-    print("Choose how to show commands in the console or on the screen:")
-    print("1 - Console")
-    print("2 - Screen")
-    mode = input("Enter your choice (1/2): ").strip()
-    if mode == '1':
-        viewer = ConsoleUserViewer()
-    elif mode == '2':
-        viewer = GuiUserViewer()
-    else:
-        print("Invalid choice. Defaulting to Console mode.")
-        viewer = ConsoleUserViewer()
+    # print("Choose how to show commands in the console or on the screen:")
+    # print("1 - Console")
+    # print("2 - Screen")
+    # mode = input("Enter your choice (1/2): ").strip()
+    # if mode == '1':
+    #     viewer = ConsoleUserViewer()
+    # elif mode == '2':
+    #     viewer = GuiUserViewer()
+    # else:
+    #     print("Invalid choice. Defaulting to Console mode.")
+    #     viewer = ConsoleUserViewer()
+    viewer = ConsoleUserViewer()
     viewer.display_commands()
     return viewer
 
